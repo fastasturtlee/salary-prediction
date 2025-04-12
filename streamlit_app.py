@@ -9,7 +9,7 @@ from joblib import load
 
 encoder = load("encoder.pkl")
 pca = load("pca_model.pkl")
-
+scaler = load('arget_salary_scaler.pkl')
 
 def prepare_input_for_prediction(
     experience: float,
@@ -158,7 +158,6 @@ if submit_btn:
 
     data = prepare_input_for_prediction(experience,age,education,job_title,gender)
 
-    scaler = load("arget_salary_scaler.pkl")
     prediction = model.predict(data)
     prediction = scaler.inverse_transform(prediction.reshape(-1, 1))
 
