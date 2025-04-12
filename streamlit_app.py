@@ -2,7 +2,6 @@ import streamlit as st
 from streamlit_option_menu import option_menu
 from pandas import DataFrame
 from sklearn.decomposition import PCA
-from sklearn.preprocessing import OneHotEncoder,MinMaxScaler
 from pandas import concat
 import keras as keras
 from joblib import load
@@ -19,7 +18,6 @@ def prepare_input_for_prediction(
     gender: str
 ):
     
-    scaler = MinMaxScaler()
     user_input = {
         "Years of Experience": experience,
         "Age": age,
@@ -42,7 +40,7 @@ def prepare_input_for_prediction(
 
     final_df = concat([input_df[numeric_columns].reset_index(drop=True), encoded_df], axis=1)
 
-    final_scaled = scaler.fit_transform(final_df)
+    final_scaled = scaler.transform(final_df)
 
     final_pca = pca.transform(final_scaled)
 
@@ -159,7 +157,7 @@ if submit_btn:
     data = prepare_input_for_prediction(experience,age,education,job_title,gender)
 
     prediction = model.predict(data)
-    prediction = scaler.inverse_transform(prediction.reshape(-1, 1))
+    #prediction = scaler.inverse_transform(prediction.reshape(-1, 1))
 
     st.markdown(f"""
     **Your Input Summary:**
