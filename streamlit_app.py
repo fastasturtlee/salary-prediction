@@ -154,7 +154,6 @@ if submit_btn:
 
     data = prepare_input_for_prediction(experience,age,education,job_title,gender)
 
-    print(data)
     prediction = model.predict(data)
     prediction = target_scaler.inverse_transform(prediction.reshape(-1, 1))
 
