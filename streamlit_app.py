@@ -10,7 +10,7 @@ from joblib import load
 encoder = load("encoder.pkl")
 model = keras.models.load_model("salary_model.keras")
 pca = load("pca_model.pkl")
-target_scaler = load("arget_salary_scaler.pkl")
+target_scaler = load("target_salary_scaler.pkl")
 salary_scaler = load("salary_scaler.pkl")
 
 def prepare_input_for_prediction(
