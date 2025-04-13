@@ -55,8 +55,8 @@ with st.sidebar:
     )
 
 
-if selected == "Model Description":
-    st.title("🧠 Model Description")
+if selected == "Model Summary":
+    st.title("🧠 Model Summary")
     st.markdown("""
     This app demonstrates a simple ML model.
 
@@ -65,6 +65,8 @@ if selected == "Model Description":
     - Dataset: Salary, MNIST, etc.
     - Purpose: Predict salary / classify digit / other logic
     """)
+
+
 
 elif selected == "Model Execution":
 
