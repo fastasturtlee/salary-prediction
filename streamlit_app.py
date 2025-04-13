@@ -165,7 +165,7 @@ elif selected == "Model Execution":
         - 🎓 Education: `{education}`
         - 💼 Job Title: `{job_title}`
         - 🧮 Experience: `{experience} years`
-        - 🔍 Model Prediction: `{prediction}`
+        - 💸 Salary: `{prediction[0][0]}`
         """)
 
 
