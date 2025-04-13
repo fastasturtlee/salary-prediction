@@ -47,7 +47,7 @@ def prepare_input_for_prediction(
 with st.sidebar:
     selected = option_menu(
         menu_title="Navigation",
-        options=["Model Summary", "Model Execution"],
+        options=["Model Execution"],
         icons=["info-circle", "gear"],
         menu_icon="cast",
         default_index=0,
@@ -55,20 +55,7 @@ with st.sidebar:
     )
 
 
-if selected == "Model Summary":
-    st.title("🧠 Model Summary")
-    st.markdown("""
-    This app demonstrates a simple ML model.
-
-    **Details:**
-    - Model Type: ANN or Regression
-    - Dataset: Salary, MNIST, etc.
-    - Purpose: Predict salary / classify digit / other logic
-    """)
-
-
-
-elif selected == "Model Execution":
+if selected == "Model Execution":
 
     gender_options = ["Male", "Female"]
 
