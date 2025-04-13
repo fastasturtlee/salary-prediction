@@ -154,6 +154,7 @@ if selected == "Model Execution":
         - 🎓 Education: `{education}`
         - 💼 Job Title: `{job_title}`
         - 🧮 Experience: `{experience} years`
+        **Predicted Salary:**
         - 💸 Salary: `{prediction[0][0]}`
         """)
 
