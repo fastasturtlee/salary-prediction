@@ -144,7 +144,7 @@ with st.form("input_form"):
     age = st.selectbox("Age", age_options)
     education = st.selectbox("Education Level", education_options)
     job_title = st.selectbox("Job Title", job_titles)
-    experience = st.number_input("Years of Experience", min_value=0, max_value=50.0, step=1, value=2)
+    experience = st.number_input("Years of Experience", min_value=0.0, max_value=50.0, step=0.5)
 
     submit_btn = st.form_submit_button("Submit")
 
@@ -154,6 +154,7 @@ if submit_btn:
 
     data = prepare_input_for_prediction(experience,age,education,job_title,gender)
 
+    print(data)
     prediction = model.predict(data)
     prediction = target_scaler.inverse_transform(prediction.reshape(-1, 1))
 
